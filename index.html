@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Troy Hunmin Lee — Researcher & Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F4EF;
+      --surface: #EFECE5;
+      --ink: #1A1714;
+      --ink-muted: #5C5650;
+      --ink-faint: #9B9590;
+      --accent: #2B4A8A;
+      --accent-light: #E8EDF7;
+      --rule: #D4CFC7;
+      --serif: 'EB Garamond', Georgia, serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: fadeUp .8s ease forwards;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid var(--rule);
+      object-fit: cover;
+      flex-shrink: 0;
+      filter: grayscale(20%);
+    }
+
+    .header-text h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .header-text .role {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .header-text .bio {
+      margin-top: 14px;
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      max-width: 520px;
+      font-style: italic;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin-top: 18px;
+    }
+
+    .contact-links a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color .2s;
+    }
+
+    .contact-links a:hover { color: var(--accent); }
+    .contact-links a::before { content: '↗ '; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,244,239,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 0;
+      opacity: 0;
+      animation: fadeDown .6s .3s ease forwards;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--accent); }
+
+    /* ── Sections ── */
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      animation: fadeUp .7s ease forwards;
+      animation-play-state: paused;
+    }
+
+    section.visible { animation-play-state: running; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    /* ── About ── */
+    .about-text p {
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+      font-size: 1.08rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .keyword {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      padding: 5px 12px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Research / Projects ── */
+    .project-list { display: flex; flex-direction: column; gap: 0; }
+
+    .project-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 0 24px;
+      padding: 28px 0;
+      border-top: 1px solid var(--rule);
+      transition: background .2s;
+      cursor: default;
+    }
+
+    .project-item:first-child { border-top: none; }
+
+    .project-num {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      padding-top: 4px;
+      text-align: right;
+    }
+
+    .project-body h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .project-body h3 a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .project-body h3 a:hover { color: var(--accent); }
+
+    .project-body p {
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 3px 9px;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── CV / Experience ── */
+    .cv-list { display: flex; flex-direction: column; gap: 0; }
+
+    .cv-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0 32px;
+      padding: 24px 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .cv-item:first-child { border-top: none; }
+
+    .cv-period {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      padding-top: 3px;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+
+    .cv-content h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .cv-content .institution {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .cv-content p {
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-group h4 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .skill-group ul {
+      list-style: none;
+    }
+
+    .skill-group li {
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-group li::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--rule);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; gap: 20px; }
+      .cv-item { grid-template-columns: 1fr; gap: 4px; }
+      .cv-period { padding-top: 0; }
+      .project-item { grid-template-columns: 1fr; }
+      .project-num { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="page-wrap">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="https://github.com/Hunminlee" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <header>
+    <div class="header-inner">
+      <img class="avatar"
+        src="https://avatars.githubusercontent.com/u/49916122?v=4"
+        alt="Troy Hunmin Lee">
+      <div class="header-text">
+        <h1>Troy Hunmin Lee</h1>
+        <p class="role">Researcher · Machine Learning · Signal Processing</p>
+        <p class="bio">Building intelligent systems at the intersection of biosignals, graph neural networks, and federated learning.</p>
+        <div class="contact-links">
+          <a href="https://github.com/Hunminlee" target="_blank">github.com/Hunminlee</a>
+          <a href="mailto:your@email.com">your@email.com</a>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">CV (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">01 · About</div>
+    <div class="about-text">
+      <p>
+        I am a researcher and engineer with a focus on machine learning applications
+        in biomedical signal processing and human-computer interaction. My work spans
+        from designing graph-based representations of EMG signals to building
+        federated learning frameworks for privacy-preserving model training.
+      </p>
+      <p>
+        I am particularly interested in developing AI systems that are both
+        theoretically grounded and deployable in real-world settings — bridging
+        the gap between academic research and practical engineering.
+      </p>
+    </div>
+    <div class="keywords">
+      <span class="keyword">Graph Neural Networks</span>
+      <span class="keyword">EMG / Biosignals</span>
+      <span class="keyword">Federated Learning</span>
+      <span class="keyword">Human-Robot Interaction</span>
+      <span class="keyword">Signal Processing</span>
+      <span class="keyword">Deep Learning</span>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-label">02 · Research &amp; Projects</div>
+    <div class="project-list">
+
+      <div class="project-item">
+        <div class="project-num">01</div>
+        <div class="project-body">
+          <h3>
+            <a href="https://github.com/Hunminlee/EMG-based-Gesture-Classification-using-Graphs-and-GNN" target="_blank">
+              EMG-based Gesture Classification using Graphs and GNN
+            </a>
+          </h3>
+          <p>
+            A graph neural network approach to classifying hand gestures from
+            electromyography (EMG) signals. Models inter-channel spatial relationships
+            as graph structures, improving classification accuracy over conventional methods.
+          </p>
+          <div class="project-tags">
+            <span class="tag">GNN</span>
+            <span class="tag">EMG</span>
+            <span class="tag">Gesture Recognition</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Jupyter</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-num">02</div>
+        <div class="project-body">
+          <h3>
+            <a href="https://github.com/Hunminlee/Federated-Prototype-Adaptation-Learning-for-modulation-classification" target="_blank">
+              Federated Prototype Adaptation Learning for Modulation Classification
+            </a>
+          </h3>
+          <p>
+            A federated learning framework with prototype-based adaptation for
+            radio modulation classification. Addresses heterogeneous data distributions
+            across clients while preserving privacy.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Federated Learning</span>
+            <span class="tag">Modulation Classification</span>
+            <span class="tag">Prototype Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-num">03</div>
+        <div class="project-body">
+          <h3>
+            <a href="https://github.com/Hunminlee/BandMyo-Device" target="_blank">
+              BandMyo Device
+            </a>
+          </h3>
+          <p>
+            Hardware and firmware design for a wearable EMG acquisition band,
+            enabling real-time muscle activity sensing for gesture control and
+            prosthetics applications.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">Wearable</span>
+            <span class="tag">EMG Hardware</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-num">04</div>
+        <div class="project-body">
+          <h3>
+            <a href="https://github.com/Hunminlee/Deciphering_HRD_features_in_competency" target="_blank">
+              Deciphering HRD Features in Competency
+            </a>
+          </h3>
+          <p>
+            Data-driven analysis of human resource development features and
+            competency modeling, combining AI-assisted assessment with interpretable
+            machine learning methods.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HRD</span>
+            <span class="tag">Interpretable ML</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-num">05</div>
+        <div class="project-body">
+          <h3>
+            <a href="https://github.com/Hunminlee/Integrating-AI-HI---HRD" target="_blank">
+              Integrating AI &amp; Human Intelligence in HRD
+            </a>
+          </h3>
+          <p>
+            Exploration of how AI tools can augment human intelligence within
+            Human Resource Development frameworks, focusing on decision support
+            and learning personalization.
+          </p>
+          <div class="project-tags">
+            <span class="tag">AI + Human Intelligence</span>
+            <span class="tag">HRD</span>
+            <span class="tag">Decision Support</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="section-label">03 · Education &amp; Experience</div>
+    <div class="cv-list">
+
+      <div class="cv-item">
+        <div class="cv-period">20XX – Present</div>
+        <div class="cv-content">
+          <h3>M.S. / Ph.D. Candidate</h3>
+          <div class="institution">YOUR UNIVERSITY · Department</div>
+          <p>Research focus: Graph-based deep learning for biosignal processing and federated learning systems.</p>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-period">20XX – 20XX</div>
+        <div class="cv-content">
+          <h3>B.S. in [Your Major]</h3>
+          <div class="institution">YOUR UNDERGRADUATE UNIVERSITY</div>
+          <p>Graduated with honors. Thesis on [topic].</p>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-period">20XX – 20XX</div>
+        <div class="cv-content">
+          <h3>Research Intern</h3>
+          <div class="institution">INSTITUTION / LAB NAME</div>
+          <p>Worked on EMG signal acquisition and machine learning pipeline development.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">04 · Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <ul>
+          <li>Python</li>
+          <li>MATLAB</li>
+          <li>C / C++</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>ML / DL Frameworks</h4>
+        <ul>
+          <li>PyTorch</li>
+          <li>PyTorch Geometric</li>
+          <li>TensorFlow / Keras</li>
+          <li>scikit-learn</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Research Areas</h4>
+        <ul>
+          <li>Graph Neural Networks</li>
+          <li>Federated Learning</li>
+          <li>Biosignal Processing</li>
+          <li>Signal Classification</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Tools &amp; Platforms</h4>
+        <ul>
+          <li>Git / GitHub</li>
+          <li>Jupyter Notebook</li>
+          <li>Linux / Bash</li>
+          <li>LaTeX</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Troy Hunmin Lee · Built with GitHub Pages · <a href="https://github.com/Hunminlee" style="color:inherit">github.com/Hunminlee</a></p>
+  </footer>
+
+</div>
+
+<script>
+  // Intersection Observer for fade-in sections
+  const sections = document.querySelectorAll('section');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(s => obs.observe(s));
+
+  // Active nav highlight
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
