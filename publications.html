@@ -9,234 +9,179 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .pub-item { display:grid; grid-template-columns:52px 1fr; gap:0 16px; margin-bottom:10px; padding:12px 0; border-left:none; }
+    .pub-item:hover { border-left:none; }
+    .pub-index { font-family:var(--mono); font-size:0.7rem; color:var(--accent); font-weight:500; padding-top:3px; text-align:right; letter-spacing:0.02em; }
+    .pub-body { border-left:2px solid var(--rule); padding:2px 0 2px 18px; transition:border-color .2s; }
+    .pub-item:hover .pub-body { border-left-color:var(--accent); }
+    .pub-title { font-size:1rem; font-weight:500; line-height:1.45; margin-bottom:4px; }
+    .pub-title a { color:var(--ink); border-bottom:1px solid var(--rule); text-decoration:none; transition:border-color .2s,color .2s; }
+    .pub-title a:hover { border-color:var(--accent); color:var(--accent); }
+    .pub-authors { font-size:0.92rem; color:var(--ink-muted); margin-bottom:3px; }
+    .pub-authors strong { color:var(--ink); font-weight:600; }
+    .pub-venue { font-size:0.88rem; color:var(--ink-faint); font-style:italic; }
+  </style>
 </head>
 <body>
-
-<nav>
-  <div class="page-wrap">
-    <ul>
-      <li><a href="index.html">About</a></li>
-      <li><a href="publications.html" class="active">Publications</a></li>
-      <li><a href="cv.html">Experiences</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="talks.html">Talks</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <!-- <li><a href="https://github.com/Hunminlee" target="_blank">GitHub ↗</a></li> -->
-    </ul>
-  </div>
-</nav>
+<nav><div class="page-wrap"><ul>
+  <li><a href="index.html">About</a></li>
+  <li><a href="publications.html" class="active">Publications</a></li>
+  <li><a href="cv.html">Experiences</a></li>
+  <li><a href="awards.html">Awards</a></li>
+  <li><a href="talks.html">Talks</a></li>
+  <li><a href="skills.html">Skills</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul></div></nav>
 
 <div class="page-wrap">
-
-  <div class="page-title">
-    <h1>Publications</h1>
-    <p>Asterisks ("*") denote equal contribution. Please refer to <a href="https://scholar.google.co.kr/citations?user=B4dLuj4AAAAJ" target="_blank">my Google Scholar page</a> for the full list.</p>
-  </div>
-
-  <section style="animation-delay:.1s;padding-top:40px;">
-    <div class="section-label">Under Review</div>
-
-    
-    <div class="pub-item">
-      <div class="pub-title">From Muscles to Nerves: Co-adaptive Peripheral Neural Sensing for Reliable Human–Machine Interaction <span class="pub-badge badge-review">Round 1</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Xianyu Chen, Brian Lim, Anh Tuan Nguyen, Byeongchan Jeong, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">Nature Communications</div>
-    </div>
-    
-    <div class="pub-item">
-      <div class="pub-title">Upper and Lower-Limb Motor Decoding for Adaptive and Generalized Neural Rehabilitation <span class="pub-badge badge-review">Round 2</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Transactions on Neural Systems and Rehabilitation Engineering</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">Bridging Biosignals and Semantics: Cross-Modal Contrastive Learning between EMG and Text <span class="pub-badge badge-review">Round 1</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Journal of Biomedical and Health Informatics</div>
-    </div>
-  </section>
-
-  <section style="animation-delay:.15s">
-    <div class="section-label">Journal Papers</div>
-
-    <div class="pub-year">2026</div>
-    
-    <div class="pub-item">
-      <div class="pub-title">FedTTA: Enabling Robust Federated Test-Time Adaptation in Adversarial Weather for Distributed Surveillance <span class="pub-badge badge-oral">Oral</span> <span class="pub-badge badge-accepted">Accepted</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee*</strong>, Tanya George*, Eungjoo Lee &nbsp;<em>(* equal contribution)</em></div>
-      <div class="pub-venue">SPIE Defense and Security 2026</div>
-    </div>
-    
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://www.nature.com/articles/s41598-026-40352-6" target="_blank">Few-Shot Prototype Adaptation for Generalizable Electromyography Gesture Recognition</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Brian Lim, Ming Jiang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">Scientific Reports (IF: 3.9) · Mar. 2026</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11322728" target="_blank">FedPML: Federated Prototype Meta-Learning for Adaptation and Generalization in Distributed Environments</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Kehua Wang, Daehee Seo</div>
-      <div class="pub-venue">IEEE Internet of Things Journal, vol. 13, no. 6, pp. 11361–11372 (IF: 9.9) · Jan. 2026</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://iopscience.iop.org/article/10.1088/2057-1976/ae3e97" target="_blank">Sequential glioblastoma segmentation via Topological Data Analysis and spatial adjacency</a></div>
-      <div class="pub-authors">Jihun Bae, <strong>Hunmin Lee</strong>, Jinglu Hu</div>
-      <div class="pub-venue">Biomedical Physics &amp; Engineering Express (IF: 1.6) · Feb. 2026</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://arxiv.org/abs/2405.08979" target="_blank">drGT: Attention-Guided Gene Assessment of Drug Response Utilizing a Drug-Cell-Gene Heterogeneous Network</a> <span class="pub-badge badge-accepted">Accepted</span></div>
-      <div class="pub-authors">Yoshitaka Inoue, <strong>Hunmin Lee</strong>, Tianfan Fu, Augustin Luna</div>
-      <div class="pub-venue">BMC Bioinformatics (IF: 3.3)</div>
-    </div>
-
-    <div class="pub-year">2025</div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11224722" target="_blank">Federated Prototype Adaptation Learning: Personalized and Generalizable Learning in Distributed IoT Networks</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Internet of Things Journal, vol. 13, no. 2, pp. 2408–2425 (IF: 9.9) · Nov. 2025</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11098935" target="_blank">FedEMG: Achieving Generalization, Personalization, and Resource Efficiency in EMG-based Upper-Limb Rehabilitation through Federated Prototype Learning</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Transactions on Biomedical Engineering, vol. 73, no. 2, pp. 803–817 (IF: 4.5) · Jul. 2025</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11072385" target="_blank">FedVaccine: Robust Federated Learning in Noisy and Non-IID Wireless Network Environments</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Hongju Seong, Jihun Bae, Wonbin Kim, Hyeokchan Kwon, Daehee Seo</div>
-      <div class="pub-venue">IEEE Transactions on Network Science and Engineering, vol. 13, pp. 701–716 (IF: 7.9) · Jul. 2025</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://www.tandfonline.com/doi/full/10.1080/13678868.2025.2541367" target="_blank">Using Machine Learning in HRD Research: Applications to Advance AI-Driven Organizational Analytics</a></div>
-      <div class="pub-authors">Minjeong Seo, <strong>Hunmin Lee</strong>, Sehoon Kim</div>
-      <div class="pub-venue">Human Resource Development International (IF: 3.9) · Jul. 2025</div>
-    </div>
-
-    <div class="pub-year">2024</div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10818442" target="_blank">Decoding Gestures in Electromyography: Spatiotemporal Graph Neural Networks for Generalizable and Interpretable Classification</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Jinhui Yang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 33, pp. 404–419 (IF: 5.2) · Dec. 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://iopscience.iop.org/article/10.1088/2057-1976/ada1db" target="_blank">HeatGSNs: Enhancing Brain Tumor Segmentation and Classification with Eigenfilters and Learnable Low-Pass Graph Heat Kernels</a></div>
-      <div class="pub-authors">Jihun Bae, <strong>Hunmin Lee</strong>, Jinglu Hu</div>
-      <div class="pub-venue">Biomedical Physics &amp; Engineering Express (IF: 1.6) · Dec. 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10782747" target="_blank">EMGCipher: Decoding Electromyography for Upper-limb Gesture Classification with Explainable AI</a> <span class="pub-badge badge-oral">Oral</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Engineering in Medicine and Biology Society (EMBC) 2024 · Jul. 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10781961" target="_blank">FedAssist: Federated Learning in AI-Powered Prosthetics for Sustainable and Collaborative Learning</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Engineering in Medicine and Biology Society (EMBC) 2024 · Jul. 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://iopscience.iop.org/article/10.1088/1741-2552/ad4c98" target="_blank">Unveiling EMG Semantics: A Prototype-Learning Approach to Generalizable Gesture Classification</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Jinhui Yang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">Journal of Neural Engineering, vol. 21, no. 3, 036031 (IF: 3.8) · May 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10507742" target="_blank">Towards Utilization of Explainable Hand Motion Recognition in 3D Capacitive Proximity Sensing</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Jihun Bae, Hyeongok Lee</div>
-      <div class="pub-venue">IEEE Sensors Journal, vol. 24, no. 12, pp. 20076–20091 (IF: 4.5) · Apr. 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10546979" target="_blank">CLSM-FL: Clustering-based Semantic Federated Learning in non-IID IoT Environment</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Internet of Things Journal, vol. 11, no. 18, pp. 29838–29851 (IF: 9.9) · Jul. 2024</div>
-    </div>
-
-    <div class="pub-year">2022 – 2023</div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10110974" target="_blank">FedLC: Optimizing Federated Learning in non-IID Data via Label-Wise Clustering</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Access, vol. 11, pp. 42082–42095 (IF: 3.6) · Apr. 2023</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9855851" target="_blank">Epidemic Vulnerability Index for Effective Vaccine Distribution Against Pandemic</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Mingon Kang, Donghyun Kim, Daehee Seo, Yingshu Li</div>
-      <div class="pub-venue">IEEE/ACM Transactions on Computational Biology and Bioinformatics (IF: 3.9) · Aug. 2022</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://www.sciencedirect.com/org/science/article/pii/S1546221822006828" target="_blank">A BPR-CNN Based Hand Motion Classifier Using Electric Field Sensors</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Inseop Na, Kamoliddin Bultakov, Youngchul Kim</div>
-      <div class="pub-venue">Computers, Materials and Continua, vol. 71, no. 3 (IF: 1.7) · Jan. 2022</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-91415-8_3 target="_blank">Epidemic Vulnerability Index for Effective Vaccine Distribution Against Pandemic</a><span class="pub-badge badge-oral">Oral</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Mingon Kang, Yingshu Li, Daehee Seo, Donghyun Kim</div>
-      <div class="pub-venue"> International Symposium on Bioinformatics Research and Applications (ISBRA) 2021 · Nov. 2021</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3426020.3426178" target="_blank">Real-time Hand Motion Frame Extraction Using Electric Potential Sensors</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Sungil Jung, Young Chul Kim</div>
-      <div class="pub-venue">SMA 2020 · Sep. 2020</div>
-    </div>
-  </section>
-
-  <!--
-  <section style="animation-delay:.2s">
-    <div class="section-label">Conference Papers</div>
-
-    <div class="pub-item">
-      <div class="pub-title">FedTTA: Enabling Robust Federated Test-Time Adaptation in Adversarial Weather for Distributed Surveillance <span class="pub-badge badge-oral">Oral</span> <span class="pub-badge badge-accepted">Accepted</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee*</strong>, Tanya George*, Eungjoo Lee &nbsp;<em>(* equal contribution)</em></div>
-      <div class="pub-venue">SPIE Defense and Security 2026</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10782747" target="_blank">EMGCipher: Decoding Electromyography for Upper-limb Gesture Classification with Explainable AI</a> <span class="pub-badge badge-oral">Oral</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Engineering in Medicine and Biology Society (EMBC) 2024 · Jul. 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10781961" target="_blank">FedAssist: Federated Learning in AI-Powered Prosthetics for Sustainable and Collaborative Learning</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Engineering in Medicine and Biology Society (EMBC) 2024 · Jul. 2024</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-91415-8_3 target="_blank">Epidemic Vulnerability Index for Effective Vaccine Distribution Against Pandemic</a><span class="pub-badge badge-oral">Oral</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Mingon Kang, Yingshu Li, Daehee Seo, Donghyun Kim</div>
-      <div class="pub-venue"> International Symposium on Bioinformatics Research and Applications (ISBRA) 2021 · Nov. 2021</div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3426020.3426178" target="_blank">Real-time Hand Motion Frame Extraction Using Electric Potential Sensors</a></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Sungil Jung, Young Chul Kim</div>
-      <div class="pub-venue">SMA 2020 · Sep. 2020</div>
-    </div>
-  </section>
-  -->
-
-  <footer>
-    <p>© 2026 Hunmin (Troy) Lee · University of Minnesota · <a href="mailto:lee03915@umn.edu">lee03915@umn.edu</a></p>
-  </footer>
-
+<div class="page-title">
+  <h1>Publications</h1>
+  <p>Asterisks ("*") denote equal contribution. Please refer to <a href="https://scholar.google.co.kr/citations?user=B4dLuj4AAAAJ" target="_blank">my Google Scholar page</a> for the full list.</p>
 </div>
 
+<section style="animation-delay:.05s;padding-top:40px;">
+<div class="section-label">Under Review</div>
+<div class="pub-item"><div class="pub-index">—</div><div class="pub-body">
+  <div class="pub-title">From Muscles to Nerves: Co-adaptive Peripheral Neural Sensing for Reliable Human–Machine Interaction <span class="pub-badge badge-review">Round 1</span></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Xianyu Chen, Brian Lim, Anh Tuan Nguyen, Byeongchan Jeong, Zhi Yang, Qi Zhao</div>
+  <div class="pub-venue">Nature Communications</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">—</div><div class="pub-body">
+  <div class="pub-title">Upper and Lower-Limb Motor Decoding for Adaptive and Generalized Neural Rehabilitation <span class="pub-badge badge-review">Round 2</span></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
+  <div class="pub-venue">IEEE Transactions on Neural Systems and Rehabilitation Engineering</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">—</div><div class="pub-body">
+  <div class="pub-title">Bridging Biosignals and Semantics: Cross-Modal Contrastive Learning between EMG and Text <span class="pub-badge badge-review">Round 1</span></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
+  <div class="pub-venue">IEEE Journal of Biomedical and Health Informatics</div>
+</div></div>
+</section>
+
+<section style="animation-delay:.1s">
+<div class="section-label">Journal Papers</div>
+
+<div class="pub-year">2026</div>
+<div class="pub-item"><div class="pub-index">J.16</div><div class="pub-body">
+  <div class="pub-title"><a href="https://www.nature.com/articles/s41598-026-40352-6" target="_blank">Few-Shot Prototype Adaptation for Generalizable Electromyography Gesture Recognition</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Brian Lim, Ming Jiang, Zhi Yang, Qi Zhao</div>
+  <div class="pub-venue">Scientific Reports (IF: 3.9) · Mar. 2026</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.15</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11322728" target="_blank">FedPML: Federated Prototype Meta-Learning for Adaptation and Generalization in Distributed Environments</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Kehua Wang, Daehee Seo</div>
+  <div class="pub-venue">IEEE Internet of Things Journal, vol. 13, no. 6, pp. 11361–11372 (IF: 9.9) · Jan. 2026</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.14</div><div class="pub-body">
+  <div class="pub-title"><a href="https://iopscience.iop.org/article/10.1088/2057-1976/ae3e97" target="_blank">Sequential glioblastoma segmentation via Topological Data Analysis and spatial adjacency</a></div>
+  <div class="pub-authors">Jihun Bae, <strong>Hunmin Lee</strong>, Jinglu Hu</div>
+  <div class="pub-venue">Biomedical Physics &amp; Engineering Express (IF: 1.6) · Feb. 2026</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.13</div><div class="pub-body">
+  <div class="pub-title"><a href="https://arxiv.org/abs/2405.08979" target="_blank">drGT: Attention-Guided Gene Assessment of Drug Response Utilizing a Drug-Cell-Gene Heterogeneous Network</a> <span class="pub-badge badge-accepted">Accepted</span></div>
+  <div class="pub-authors">Yoshitaka Inoue, <strong>Hunmin Lee</strong>, Tianfan Fu, Augustin Luna</div>
+  <div class="pub-venue">BMC Bioinformatics (IF: 3.3)</div>
+</div></div>
+
+<div class="pub-year">2025</div>
+<div class="pub-item"><div class="pub-index">J.12</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11224722" target="_blank">Federated Prototype Adaptation Learning: Personalized and Generalizable Learning in Distributed IoT Networks</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
+  <div class="pub-venue">IEEE Internet of Things Journal, vol. 13, no. 2, pp. 2408–2425 (IF: 9.9) · Nov. 2025</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.11</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11098935" target="_blank">FedEMG: Achieving Generalization, Personalization, and Resource Efficiency in EMG-based Upper-Limb Rehabilitation through Federated Prototype Learning</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Zhi Yang, Qi Zhao</div>
+  <div class="pub-venue">IEEE Transactions on Biomedical Engineering, vol. 73, no. 2, pp. 803–817 (IF: 4.5) · Jul. 2025</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.10</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11072385" target="_blank">FedVaccine: Robust Federated Learning in Noisy and Non-IID Wireless Network Environments</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Hongju Seong, Jihun Bae, Wonbin Kim, Hyeokchan Kwon, Daehee Seo</div>
+  <div class="pub-venue">IEEE Transactions on Network Science and Engineering, vol. 13, pp. 701–716 (IF: 7.9) · Jul. 2025</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.9</div><div class="pub-body">
+  <div class="pub-title"><a href="https://www.tandfonline.com/doi/full/10.1080/13678868.2025.2541367" target="_blank">Using Machine Learning in HRD Research: Applications to Advance AI-Driven Organizational Analytics</a></div>
+  <div class="pub-authors">Minjeong Seo, <strong>Hunmin Lee</strong>, Sehoon Kim</div>
+  <div class="pub-venue">Human Resource Development International (IF: 3.9) · Jul. 2025</div>
+</div></div>
+
+<div class="pub-year">2024</div>
+<div class="pub-item"><div class="pub-index">J.8</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10818442" target="_blank">Decoding Gestures in Electromyography: Spatiotemporal Graph Neural Networks for Generalizable and Interpretable Classification</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Jinhui Yang, Zhi Yang, Qi Zhao</div>
+  <div class="pub-venue">IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 33, pp. 404–419 (IF: 5.2) · Dec. 2024</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.7</div><div class="pub-body">
+  <div class="pub-title"><a href="https://iopscience.iop.org/article/10.1088/2057-1976/ada1db" target="_blank">HeatGSNs: Enhancing Brain Tumor Segmentation and Classification with Eigenfilters and Learnable Low-Pass Graph Heat Kernels</a></div>
+  <div class="pub-authors">Jihun Bae, <strong>Hunmin Lee</strong>, Jinglu Hu</div>
+  <div class="pub-venue">Biomedical Physics &amp; Engineering Express (IF: 1.6) · Dec. 2024</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.6</div><div class="pub-body">
+  <div class="pub-title"><a href="https://iopscience.iop.org/article/10.1088/1741-2552/ad4c98" target="_blank">Unveiling EMG Semantics: A Prototype-Learning Approach to Generalizable Gesture Classification</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Jinhui Yang, Zhi Yang, Qi Zhao</div>
+  <div class="pub-venue">Journal of Neural Engineering, vol. 21, no. 3, 036031 (IF: 3.8) · May 2024</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.5</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10507742" target="_blank">Towards Utilization of Explainable Hand Motion Recognition in 3D Capacitive Proximity Sensing</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Jihun Bae, Hyeongok Lee</div>
+  <div class="pub-venue">IEEE Sensors Journal, vol. 24, no. 12, pp. 20076–20091 (IF: 4.5) · Apr. 2024</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.4</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10546979" target="_blank">CLSM-FL: Clustering-based Semantic Federated Learning in non-IID IoT Environment</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
+  <div class="pub-venue">IEEE Internet of Things Journal, vol. 11, no. 18, pp. 29838–29851 (IF: 9.9) · Jul. 2024</div>
+</div></div>
+
+<div class="pub-year">2022 – 2023</div>
+<div class="pub-item"><div class="pub-index">J.3</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10110974" target="_blank">FedLC: Optimizing Federated Learning in non-IID Data via Label-Wise Clustering</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
+  <div class="pub-venue">IEEE Access, vol. 11, pp. 42082–42095 (IF: 3.6) · Apr. 2023</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.2</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9855851" target="_blank">Epidemic Vulnerability Index for Effective Vaccine Distribution Against Pandemic</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Mingon Kang, Donghyun Kim, Daehee Seo, Yingshu Li</div>
+  <div class="pub-venue">IEEE/ACM Transactions on Computational Biology and Bioinformatics (IF: 3.9) · Aug. 2022</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">J.1</div><div class="pub-body">
+  <div class="pub-title"><a href="https://www.sciencedirect.com/org/science/article/pii/S1546221822006828" target="_blank">A BPR-CNN Based Hand Motion Classifier Using Electric Field Sensors</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Inseop Na, Kamoliddin Bultakov, Youngchul Kim</div>
+  <div class="pub-venue">Computers, Materials and Continua, vol. 71, no. 3 (IF: 1.7) · Jan. 2022</div>
+</div></div>
+</section>
+
+<section style="animation-delay:.2s">
+<div class="section-label">Conference Papers</div>
+<div class="pub-item"><div class="pub-index">C.5</div><div class="pub-body">
+  <div class="pub-title">FedTTA: Enabling Robust Federated Test-Time Adaptation in Adversarial Weather for Distributed Surveillance <span class="pub-badge badge-oral">Oral</span> <span class="pub-badge badge-accepted">Accepted</span></div>
+  <div class="pub-authors"><strong>Hunmin Lee*</strong>, Tanya George*, Eungjoo Lee &nbsp;<em>(* equal contribution)</em></div>
+  <div class="pub-venue">SPIE Defense and Security 2026</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">C.4</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10782747" target="_blank">EMGCipher: Decoding Electromyography for Upper-limb Gesture Classification with Explainable AI</a> <span class="pub-badge badge-oral">Oral</span></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
+  <div class="pub-venue">IEEE Engineering in Medicine and Biology Society (EMBC) 2024 · Jul. 2024</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">C.3</div><div class="pub-body">
+  <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10781961" target="_blank">FedAssist: Federated Learning in AI-Powered Prosthetics for Sustainable and Collaborative Learning</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
+  <div class="pub-venue">IEEE Engineering in Medicine and Biology Society (EMBC) 2024 · Jul. 2024</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">C.2</div><div class="pub-body">
+  <div class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-91415-8_3" target="_blank">Epidemic Vulnerability Index for Effective Vaccine Distribution Against Pandemic</a> <span class="pub-badge badge-oral">Oral</span></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Mingon Kang, Yingshu Li, Daehee Seo, Donghyun Kim</div>
+  <div class="pub-venue">International Symposium on Bioinformatics Research and Applications (ISBRA) 2021 · Nov. 2021</div>
+</div></div>
+<div class="pub-item"><div class="pub-index">C.1</div><div class="pub-body">
+  <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3426020.3426178" target="_blank">Real-time Hand Motion Frame Extraction Using Electric Potential Sensors</a></div>
+  <div class="pub-authors"><strong>Hunmin Lee</strong>, Sungil Jung, Young Chul Kim</div>
+  <div class="pub-venue">International Conference on Smart Media and Applications (SMA) 2020 · Sep. 2020</div>
+</div></div>
+</section>
+
+<footer><p>© 2026 Hunmin (Troy) Lee · University of Minnesota · <a href="mailto:lee03915@umn.edu">lee03915@umn.edu</a></p></footer>
+</div>
 <script>
   const sections = document.querySelectorAll('section');
   const obs = new IntersectionObserver(entries => {
