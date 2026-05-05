@@ -244,3 +244,19 @@ footer a { color: inherit; }
   .cv-period, .award-year, .news-date { padding-top: 0; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+
+/* AVATAR INFO (address below photo) */
+.avatar-info {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--ink-faint);
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ABOUT section — no top border on first section */
+#about {
+  border-top: none;
+  padding-top: 44px;
+}
