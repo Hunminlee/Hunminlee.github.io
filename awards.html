@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awards — Hunmin (Troy) Lee</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH4XTVH4Y7"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WH4XTVH4Y7');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="page-wrap">
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="awards.html" class="active">Awards</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://github.com/Hunminlee" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title"><h1>Awards &amp; Honors</h1></div>
+
+  <section style="animation-delay:.1s;padding-top:40px;">
+    <div class="section-label">Fellowships &amp; Awards</div>
+    <div>
+      <div class="award-item">
+        <div class="award-year">2026</div>
+        <div class="award-content">
+          <h4>Doctoral Dissertation Fellowship — $26,000</h4>
+          <p>University of Minnesota · Recognizing the university's most accomplished Ph.D. candidates.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div class="award-content">
+          <h4>IOP Outstanding Reviewer Award</h4>
+          <p>IOP Publishing · Recognized for peer review contributions to the Journal of Neural Engineering.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2024</div>
+        <div class="award-content">
+          <h4>2nd Prize — AI/ICT Assistive Device Nationwide Competition</h4>
+          <p>Korea Employment Agency for Persons with Disabilities · "K-AI prosthetic model and platform architecture."</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2023</div>
+        <div class="award-content">
+          <h4>3rd Prize — Social Data Analysis Nationwide Competition</h4>
+          <p>Daishin Group, Korea ESG Lab · GNN-based network analysis using Graph Convolution Network.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2022</div>
+        <div class="award-content">
+          <h4>1st Prize — Industrial Hemp AI Hackathon (Korea nationwide)</h4>
+          <p>Korean National Information Society Agency · GNN-based federated learning framework.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2020</div>
+        <div class="award-content">
+          <h4>1st Prize — Georgia State University 3-Minute Thesis</h4>
+          <p>Georgia State University.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2019</div>
+        <div class="award-content">
+          <h4>1st Prize — Asia Open Data Challenge (International)</h4>
+          <p>GIGABYTE (Korea, Japan, Taiwan, Thailand) · Conv-LSTM model for wind-energy generation prediction.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2019</div>
+        <div class="award-content">
+          <h4>2nd Prize — KEPCO Software Competition (Korea nationwide)</h4>
+          <p>Korea Electric Power Corporation · Solar energy generation prediction using machine learning.</p>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2018</div>
+        <div class="award-content">
+          <h4>2nd Prize — University Student Idea National Contest</h4>
+          <p>Korean Ministry of SMEs &amp; Startups, Hyundai Motors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Hunmin (Troy) Lee · University of Minnesota · <a href="mailto:lee03915@umn.edu">lee03915@umn.edu</a></p>
+  </footer>
+</div>
+<script>
+  const sections = document.querySelectorAll('section');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

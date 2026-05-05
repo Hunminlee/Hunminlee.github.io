@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Talks — Hunmin (Troy) Lee</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH4XTVH4Y7"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-WH4XTVH4Y7');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="page-wrap">
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="awards.html">Awards</a></li>
+      <li><a href="talks.html" class="active">Talks</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://github.com/Hunminlee" target="_blank">GitHub ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title"><h1>Invited Talks</h1></div>
+
+  <section style="animation-delay:.1s;padding-top:40px;">
+    <div class="section-label">Talks</div>
+    <div class="cv-list">
+      <div class="cv-item">
+        <div class="cv-period">May 2025</div>
+        <div class="cv-content">
+          <h3>Research trends in AI-powered applications for neural decoding and rehabilitation</h3>
+          <div class="institution">Sunchon National University</div>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-period">Dec. 2024</div>
+        <div class="cv-content">
+          <h3>Artificial Intelligence models for biomedical and rehabilitation engineering</h3>
+          <div class="institution">Sangmyoung University</div>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-period">Aug. 2024</div>
+        <div class="cv-content">
+          <h3>Generative AI and their applications</h3>
+          <div class="institution">Sunchon National University</div>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-period">Jul. 2024</div>
+        <div class="cv-content">
+          <h3>Deep Neural Network and its applications in the biomedical field</h3>
+          <div class="institution">Chonnam National University</div>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-period">Jun. 2024</div>
+        <div class="cv-content">
+          <h3>Graph neural networks and prototype learning</h3>
+          <div class="institution">Sangmyoung University</div>
+        </div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-period">Nov. 2023</div>
+        <div class="cv-content">
+          <h3>Designing interpretable deep learning model in biomedical engineering</h3>
+          <div class="institution">Sunchon National University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Hunmin (Troy) Lee · University of Minnesota · <a href="mailto:lee03915@umn.edu">lee03915@umn.edu</a></p>
+  </footer>
+</div>
+<script>
+  const sections = document.querySelectorAll('section');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

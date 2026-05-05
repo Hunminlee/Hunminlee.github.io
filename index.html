@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hunmin (Troy) Lee — Ph.D. Researcher</title>
+  <title>Hunmin (Troy) Lee</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH4XTVH4Y7"></script>
   <script>
@@ -14,220 +14,20 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #F7F4EF;
-      --surface: #EFECE5;
-      --ink: #1A1714;
-      --ink-muted: #5C5650;
-      --ink-faint: #9B9590;
-      --accent: #2B4A8A;
-      --accent-light: #E8EDF7;
-      --rule: #D4CFC7;
-      --serif: 'EB Garamond', Georgia, serif;
-      --mono: 'DM Mono', monospace;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: 18px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
-    .page-wrap { max-width: 860px; margin: 0 auto; padding: 0 32px; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(247,244,239,0.93);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--rule);
-      padding: 13px 0;
-      animation: fadeDown .6s ease forwards;
-    }
-    nav ul { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
-    nav a {
-      font-family: var(--mono); font-size: 0.7rem;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--ink-muted); text-decoration: none; transition: color .2s;
-    }
-    nav a:hover, nav a.active { color: var(--accent); }
-
-    /* HEADER */
-    header {
-      padding: 64px 0 52px;
-      border-bottom: 1px solid var(--rule);
-      animation: fadeUp .8s ease forwards;
-    }
-    .header-inner { display: flex; align-items: flex-start; gap: 40px; }
-    .avatar-wrap { flex-shrink: 0; }
-    .avatar {
-      width: 110px; height: 110px; border-radius: 50%;
-      border: 2px solid var(--rule);
-      object-fit: cover; filter: grayscale(15%);
-      display: block;
-    }
-    .avatar-placeholder {
-      width: 110px; height: 110px; border-radius: 50%;
-      border: 2px dashed var(--rule);
-      background: var(--surface);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 6px;
-    }
-    .avatar-placeholder svg { opacity: .35; }
-    .avatar-placeholder span {
-      font-family: var(--mono); font-size: 0.58rem;
-      color: var(--ink-faint); letter-spacing: 0.06em;
-      text-align: center; line-height: 1.5;
-    }
-    .header-text h1 {
-      font-size: 2.5rem; font-weight: 500;
-      letter-spacing: -0.02em; line-height: 1.15;
-    }
-    .header-text .role {
-      font-family: var(--mono); font-size: 0.74rem;
-      color: var(--accent); letter-spacing: 0.08em;
-      text-transform: uppercase; margin-top: 6px;
-    }
-    .header-text .bio {
-      margin-top: 12px; font-size: 1.02rem;
-      color: var(--ink-muted); max-width: 520px; font-style: italic;
-    }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 5px 18px; margin-top: 16px; }
-    .contact-links a {
-      font-family: var(--mono); font-size: 0.72rem;
-      color: var(--ink-muted); text-decoration: none;
-      letter-spacing: 0.04em; transition: color .2s;
-    }
-    .contact-links a:hover { color: var(--accent); }
-    .contact-links a::before { content: '↗ '; }
-
-    /* SECTIONS */
-    section {
-      padding: 60px 0; border-bottom: 1px solid var(--rule);
-      opacity: 0; animation: fadeUp .7s ease forwards;
-      animation-play-state: paused;
-    }
-    section.visible { animation-play-state: running; }
-    .section-label {
-      font-family: var(--mono); font-size: 0.68rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--ink-faint); margin-bottom: 28px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-
-    /* ABOUT */
-    .about-text p { color: var(--ink-muted); margin-bottom: 12px; font-size: 1.05rem; }
-    .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
-    .keyword {
-      font-family: var(--mono); font-size: 0.68rem;
-      padding: 4px 11px; background: var(--accent-light);
-      color: var(--accent); border-radius: 2px; letter-spacing: 0.05em;
-    }
-
-    /* PUBLICATIONS */
-    .pub-year {
-      font-family: var(--mono); font-size: 0.68rem;
-      color: var(--ink-faint); letter-spacing: 0.1em;
-      text-transform: uppercase; margin: 28px 0 10px;
-    }
-    .pub-item {
-      padding: 16px 0 16px 20px;
-      border-left: 2px solid var(--rule);
-      margin-bottom: 10px; transition: border-color .2s;
-    }
-    .pub-item:hover { border-left-color: var(--accent); }
-    .pub-item .pub-title { font-size: 1rem; font-weight: 500; line-height: 1.45; margin-bottom: 4px; }
-    .pub-item .pub-authors { font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 3px; }
-    .pub-item .pub-authors strong { color: var(--ink); }
-    .pub-item .pub-venue { font-size: 0.85rem; color: var(--ink-faint); font-style: italic; }
-    .pub-badge {
-      display: inline-block; font-family: var(--mono);
-      font-size: 0.6rem; padding: 2px 7px; border-radius: 2px;
-      letter-spacing: 0.05em; margin-left: 7px; vertical-align: middle;
-    }
-    .badge-oral { background: #EEF4E8; color: #3B6D11; }
-    .badge-review { background: #FDF3E3; color: #854F0B; }
-    .badge-accepted { background: var(--accent-light); color: var(--accent); }
-
-    /* CV rows */
-    .cv-list { display: flex; flex-direction: column; }
-    .cv-item {
-      display: grid; grid-template-columns: 170px 1fr;
-      gap: 0 28px; padding: 22px 0; border-top: 1px solid var(--rule);
-    }
-    .cv-item:first-child { border-top: none; }
-    .cv-period {
-      font-family: var(--mono); font-size: 0.7rem;
-      color: var(--ink-faint); padding-top: 3px; line-height: 1.6;
-    }
-    .cv-content h3 { font-size: 1.03rem; font-weight: 500; margin-bottom: 2px; }
-    .cv-content .institution {
-      font-family: var(--mono); font-size: 0.72rem;
-      color: var(--accent); letter-spacing: 0.04em; margin-bottom: 5px;
-    }
-    .cv-content p { font-size: 0.92rem; color: var(--ink-muted); }
-    .cv-content ul { margin: 4px 0 0 16px; font-size: 0.92rem; color: var(--ink-muted); }
-    .cv-content ul li { margin-bottom: 2px; }
-
-    /* AWARDS */
-    .award-item {
-      padding: 18px 0; border-top: 1px solid var(--rule);
-      display: grid; grid-template-columns: 70px 1fr; gap: 0 24px;
-    }
-    .award-item:first-child { border-top: none; }
-    .award-year { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-faint); padding-top: 3px; }
-    .award-content h4 { font-size: 1rem; font-weight: 500; margin-bottom: 2px; }
-    .award-content p { font-size: 0.88rem; color: var(--ink-muted); }
-
-    /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 24px; }
-    .skill-group h4 {
-      font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
-      padding-bottom: 7px; border-bottom: 1px solid var(--rule);
-    }
-    .skill-group ul { list-style: none; }
-    .skill-group li {
-      font-size: 0.92rem; color: var(--ink-muted); padding: 2px 0;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .skill-group li::before { content: ''; width: 4px; height: 4px; background: var(--rule); border-radius: 50%; flex-shrink: 0; }
-
-    footer { padding: 44px 0; text-align: center; }
-    footer p { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.06em; }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 640px) {
-      .header-inner { flex-direction: column; gap: 20px; }
-      .cv-item, .award-item { grid-template-columns: 1fr; gap: 3px; }
-      .cv-period, .award-year { padding-top: 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
   <div class="page-wrap">
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#talks">Talks</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="index.html" class="active">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="awards.html">Awards</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="https://github.com/Hunminlee" target="_blank">GitHub ↗</a></li>
     </ul>
   </div>
@@ -237,33 +37,13 @@
 
   <header>
     <div class="header-inner">
-
       <!--
-      ╔══════════════════════════════════════════════════╗
-      ║  HOW TO ADD YOUR PHOTO                           ║
-      ║                                                  ║
-      ║  1. Upload your photo to the same GitHub folder  ║
-      ║     as index.html (e.g. photo.jpg)               ║
-      ║                                                  ║
-      ║  2. Replace the <div class="avatar-placeholder"> ║
-      ║     block below with:                            ║
-      ║                                                  ║
-      ║  <img class="avatar" src="photo.jpg"             ║
-      ║       alt="Hunmin Lee">                          ║
-      ╚══════════════════════════════════════════════════╝
+        PHOTO: Replace the block below with:
+        <img class="avatar" src="photo.jpg" alt="Hunmin Lee">
       -->
-      <img class="avatar" src="photo.jpg" alt="Hunmin Lee">
-      <!--
-      <div class="avatar-wrap">        
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#9B9590" stroke-width="1.5">
-            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-          <span>Add photo<br>here</span>
-        </div>
+      <div class="avatar-wrap">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/49916122?v=4" alt="Hunmin Lee">
       </div>
-      -->
-
-      
       <div class="header-text">
         <h1>Hunmin (Troy) Lee</h1>
         <p class="role">Ph.D. Candidate · Computer Science &amp; Engineering · University of Minnesota</p>
@@ -271,21 +51,20 @@
         <div class="contact-links">
           <a href="mailto:lee03915@umn.edu">lee03915@umn.edu</a>
           <a href="https://github.com/Hunminlee" target="_blank">GitHub</a>
-          <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+          <a href="https://scholar.google.co.kr/citations?hl=en&user=WIpsTa4AAAAJ" target="_blank">Google Scholar</a>
           <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a href="Hunmin_Lee___CV.pdf" target="_blank">CV (PDF)</a>
+          <a href="assets/Hunmin_Lee_CV.pdf" target="_blank">CV (PDF)</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about">
+  <section id="about" style="animation-delay:.1s">
     <div class="section-label">About</div>
     <div class="about-text">
-      <p>I am a Ph.D. candidate in Computer Science and Engineering at the University of Minnesota (GPA 3.97/4.0), advised by Dr. Catherine Qi Zhao. My research focuses on machine learning systems that generalize across distributed, heterogeneous environments — with applications in biomedical signal processing, neural rehabilitation, and IoT networks.</p>
-      <p>My work spans federated learning, graph neural networks, and EMG-based gesture recognition, with the overarching goal of deploying interpretable and privacy-preserving AI in real clinical and engineering settings. I have published 16 journal papers in venues including IEEE Transactions on Biomedical Engineering, IEEE IoT Journal, and Journal of Neural Engineering, and 5 conference papers.</p>
-      <p>I am supported by the University of Minnesota Doctoral Dissertation Fellowship (2026) and collaborate with Fasikl Incorporated and Google DeepMind.</p>
+      <p>I am a Ph.D. candidate in Computer Science and Engineering at the <strong>University of Minnesota</strong> (GPA 3.97/4.0), advised by <a href="https://scholar.google.com/" target="_blank">Dr. Catherine Qi Zhao</a>. I am a recipient of the <strong>Doctoral Dissertation Fellowship (2026)</strong>, recognizing the university's most accomplished Ph.D. candidates.</p>
+      <p>My research focuses on building machine learning systems that generalize across distributed, heterogeneous environments — with applications in biomedical signal processing, neural rehabilitation, and IoT networks. I have published <strong>16 journal papers</strong> in venues including <em>IEEE Transactions on Biomedical Engineering</em>, <em>IEEE Internet of Things Journal</em>, and <em>Journal of Neural Engineering</em>, along with <strong>5 conference papers</strong>.</p>
+      <p>I am currently collaborating with <strong>Fasikl Incorporated</strong> on AI-powered upper-limb neural rehabilitation and with <strong>Google DeepMind</strong> on federated learning for distributed networks.</p>
     </div>
     <div class="keywords">
       <span class="keyword">Federated Learning</span>
@@ -299,376 +78,21 @@
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section id="publications">
-    <div class="section-label">Publications</div>
-
-    <div class="pub-year">Under Review</div>
-    <div class="pub-item">
-      <div class="pub-title">Upper and Lower-Limb Motor Decoding for Adaptive and Generalized Neural Rehabilitation <span class="pub-badge badge-review">Round 2</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Transactions on Neural Systems and Rehabilitation Engineering</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">Bridging Biosignals and Semantics: Cross-Modal Contrastive Learning between EMG and Text <span class="pub-badge badge-review">Round 1</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Journal of Biomedical and Health Informatics</div>
-    </div>
-
-    <div class="pub-year">2026</div>
-    <div class="pub-item">
-      <div class="pub-title">Few-Shot Prototype Adaptation for Generalizable Electromyography Gesture Recognition</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Brian Lim, Ming Jiang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">Scientific Reports (IF: 3.9) · Mar. 2026</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">FedPML: Federated Prototype Meta-Learning for Adaptation and Generalization in Distributed Environments</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Kehua Wang, Daehee Seo</div>
-      <div class="pub-venue">IEEE Internet of Things Journal, vol. 13, no. 6 (IF: 9.936) · Jan. 2026</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">Sequential glioblastoma segmentation via Topological Data Analysis and spatial adjacency</div>
-      <div class="pub-authors">Jihun Bae, <strong>Hunmin Lee</strong>, Jinglu Hu</div>
-      <div class="pub-venue">Biomedical Physics &amp; Engineering Express · Feb. 2026</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">FedTTA: Enabling Robust Federated Test-Time Adaptation in Adversarial Weather for Distributed Surveillance <span class="pub-badge badge-oral">Oral</span> <span class="pub-badge badge-accepted">Accepted</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee*</strong>, Tanya George*, Eungjoo Lee</div>
-      <div class="pub-venue">SPIE Defense and Security 2026</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">drGT: Attention-Guided Gene Assessment of Drug Response Utilizing a Drug-Cell-Gene Heterogeneous Network <span class="pub-badge badge-accepted">Accepted</span></div>
-      <div class="pub-authors">Yoshitaka Inoue, <strong>Hunmin Lee</strong>, Tianfan Fu, Augustin Luna</div>
-      <div class="pub-venue">BMC Bioinformatics (IF: 3.3)</div>
-    </div>
-
-    <div class="pub-year">2025</div>
-    <div class="pub-item">
-      <div class="pub-title">Federated Prototype Adaptation Learning: Personalized and Generalizable Learning in Distributed IoT Networks</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Internet of Things Journal, vol. 13, no. 2 (IF: 9.936) · Nov. 2025</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">FedEMG: Achieving Generalization, Personalization, and Resource Efficiency in EMG-based Upper-Limb Rehabilitation through Federated Prototype Learning</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Transactions on Biomedical Engineering, vol. 73, no. 2 (IF: 4.5) · Jul. 2025</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">FedVaccine: Robust Federated Learning in Noisy and Non-IID Wireless Network Environments</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Hongju Seong, Jihun Bae, Wonbin Kim, Hyeokchan Kwon, Daehee Seo</div>
-      <div class="pub-venue">IEEE Transactions on Network Science and Engineering, vol. 13 (IF: 7.9) · Jul. 2025</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">Using Machine Learning in HRD Research: Applications to Advance AI-Driven Organizational Analytics</div>
-      <div class="pub-authors">Minjeong Seo, <strong>Hunmin Lee</strong>, Sehoon Kim</div>
-      <div class="pub-venue">Human Resource Development International (IF: 3.9) · Jul. 2025</div>
-    </div>
-
-    <div class="pub-year">2024</div>
-    <div class="pub-item">
-      <div class="pub-title">Decoding Gestures in Electromyography: Spatiotemporal Graph Neural Networks for Generalizable and Interpretable Classification</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Jinhui Yang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">IEEE Transactions on Neural Systems and Rehabilitation Engineering, vol. 33 (IF: 5.2) · Dec. 2024</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">HeatGSNs: Enhancing Brain Tumor Segmentation and Classification with Eigenfilters and Learnable Low-Pass Graph Heat Kernels</div>
-      <div class="pub-authors">Jihun Bae, <strong>Hunmin Lee</strong>, Jinglu Hu</div>
-      <div class="pub-venue">Biomedical Physics &amp; Engineering Express · Dec. 2024</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">Unveiling EMG semantics: a prototype-learning approach to generalizable gesture classification</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Jinhui Yang, Zhi Yang, Qi Zhao</div>
-      <div class="pub-venue">Journal of Neural Engineering, vol. 21, no. 3 (IF: 3.8) · May 2024</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">Towards Utilization of Explainable Hand Motion Recognition in 3D Capacitive Proximity Sensing</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Jihun Bae, Hyeongok Lee</div>
-      <div class="pub-venue">IEEE Sensors Journal, vol. 24, no. 12 (IF: 4.5) · Apr. 2024</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">CLSM-FL: Clustering-based Semantic Federated Learning in non-IID IoT Environment</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Internet of Things Journal, vol. 11, no. 18 (IF: 9.936) · Jul. 2024</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">EMGCipher: Decoding Electromyography for Upper-limb Gesture Classification with Explainable AI <span class="pub-badge badge-oral">Oral</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
-      <div class="pub-venue">IEEE EMBC 2024 · Jul. 2024</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">FedAssist: Federated Learning in AI-Powered Prosthetics for Sustainable and Collaborative Learning</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Ming Jiang, Qi Zhao</div>
-      <div class="pub-venue">IEEE EMBC 2024 · Jul. 2024</div>
-    </div>
-
-    <div class="pub-year">2022 – 2023</div>
-    <div class="pub-item">
-      <div class="pub-title">FedLC: Optimizing federated learning in non-IID data via label-wise clustering</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Daehee Seo</div>
-      <div class="pub-venue">IEEE Access, vol. 11 · Apr. 2023</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">Epidemic vulnerability index for effective vaccine distribution against pandemic</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Mingon Kang, Donghyun Kim, Daehee Seo, Yingshu Li</div>
-      <div class="pub-venue">IEEE/ACM Transactions on Computational Biology and Bioinformatics · Aug. 2022</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">A BPR-CNN based hand motion classifier using electric field sensors</div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Inseop Na, Kamoliddin Bultakov, Youngchul Kim</div>
-      <div class="pub-venue">Computers, Material and Continua · Jan. 2022</div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-title">Epidemic Vulnerability Index for Effective Vaccine Distribution Against Pandemic <span class="pub-badge badge-oral">Oral</span></div>
-      <div class="pub-authors"><strong>Hunmin Lee</strong>, Mingon Kang, Yingshu Li, Daehee Seo, Donghyun Kim</div>
-      <div class="pub-venue">ISBRA 2021 · Nov. 2021</div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-label">Education &amp; Experience</div>
-    <div class="cv-list">
-      <div class="cv-item">
-        <div class="cv-period">Aug. 2022 – Present</div>
-        <div class="cv-content">
-          <h3>Ph.D. in Computer Science and Engineering</h3>
-          <div class="institution">University of Minnesota, Twin Cities, MN · GPA 3.97/4.0</div>
-          <p>Advisor: Dr. Catherine Qi Zhao. Doctoral Dissertation Fellow (2026). Research on federated learning, GNNs, and EMG-based rehabilitation systems.</p>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Aug. 2020 – May 2022</div>
-        <div class="cv-content">
-          <h3>M.S. in Computer Science</h3>
-          <div class="institution">Georgia State University, Atlanta, GA · GPA 4.11/4.3</div>
-          <p>Advisors: Dr. Donghyun Kim and Dr. Yingshu Li.</p>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">May 2014 – Feb. 2020</div>
-        <div class="cv-content">
-          <h3>B.E. in Computer Engineering</h3>
-          <div class="institution">Chonnam National University, Gwangju, South Korea · GPA 3.83/4.5</div>
-          <p>Advisor: Dr. Youngchul Kim.</p>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">May 2025 – Present</div>
-        <div class="cv-content">
-          <h3>Research Engineer Intern</h3>
-          <div class="institution">Fasikl Incorporated, Bloomington, MN</div>
-          <p>Designing AI models for upper-limb neural rehabilitation and diagnosis of movement disorders (Parkinson's disease and essential tremor).</p>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Aug. 2022 – May 2025</div>
-        <div class="cv-content">
-          <h3>Research Assistant — VIP Lab</h3>
-          <div class="institution">University of Minnesota (Dr. Catherine Qi Zhao)</div>
-          <p>7.5 years total research experience across UMN, Georgia State University, and Chonnam National University.</p>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">2021 – Present</div>
-        <div class="cv-content">
-          <h3>Teaching Assistant</h3>
-          <div class="institution">University of Minnesota &amp; Georgia State University · 10 semesters</div>
-          <ul>
-            <li>Machine Learning Fundamentals (CSCI 5521) — 2023, 2024, 2025 Fall</li>
-            <li>Introduction to Python (CSCI 1133) — 2024 Spring</li>
-            <li>Introduction to AI (CSCI 4511) — 2023 Spring</li>
-            <li>Theoretical Foundations of CS (CSC 2510) — 2022 Spring</li>
-          </ul>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Jun. – Aug. 2020</div>
-        <div class="cv-content">
-          <h3>Software Engineer Intern</h3>
-          <div class="institution">Korea Power Electric Corporation, Naju, South Korea</div>
-          <p>Advanced Metering Infrastructure (AMI) software maintenance and deployment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AWARDS -->
-  <section id="awards">
-    <div class="section-label">Awards &amp; Honors</div>
-    <div>
-      <div class="award-item">
-        <div class="award-year">2026</div>
-        <div class="award-content">
-          <h4>Doctoral Dissertation Fellowship — $26,000</h4>
-          <p>University of Minnesota · Recognizing the university's most accomplished Ph.D. candidates.</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2025</div>
-        <div class="award-content">
-          <h4>IOP Outstanding Reviewer Award</h4>
-          <p>IOP Publishing · Recognized for peer review contributions to the Journal of Neural Engineering.</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2024</div>
-        <div class="award-content">
-          <h4>2nd Prize — AI/ICT Assistive Device Nationwide Competition</h4>
-          <p>Korea Employment Agency for Persons with Disabilities · "K-AI prosthetic model and platform architecture."</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2023</div>
-        <div class="award-content">
-          <h4>3rd Prize — Social Data Analysis Nationwide Competition</h4>
-          <p>Daishin Group, Korea ESG Lab · GNN-based network analysis.</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2022</div>
-        <div class="award-content">
-          <h4>1st Prize — Industrial Hemp AI Hackathon (Korea nationwide)</h4>
-          <p>Korean National Information Society Agency · GNN-based federated learning framework.</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2020</div>
-        <div class="award-content">
-          <h4>1st Prize — Georgia State University 3-Minute Thesis</h4>
-          <p>Georgia State University.</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2019</div>
-        <div class="award-content">
-          <h4>1st Prize — Asia Open Data Challenge (International)</h4>
-          <p>GIGABYTE (Korea, Japan, Taiwan, Thailand) · Conv-LSTM for wind-energy prediction.</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2019</div>
-        <div class="award-content">
-          <h4>2nd Prize — KEPCO Software Competition</h4>
-          <p>Korea Electric Power Corporation · Solar energy generation prediction.</p>
-        </div>
-      </div>
-      <div class="award-item">
-        <div class="award-year">2018</div>
-        <div class="award-content">
-          <h4>2nd Prize — University Student Idea National Contest</h4>
-          <p>Korean Ministry of SMEs &amp; Startups, Hyundai Motors.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TALKS -->
-  <section id="talks">
-    <div class="section-label">Invited Talks</div>
-    <div class="cv-list">
-      <div class="cv-item">
-        <div class="cv-period">May 2025</div>
-        <div class="cv-content">
-          <h3>Research trends in AI-powered applications for neural decoding and rehabilitation</h3>
-          <div class="institution">Sunchon National University</div>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Dec. 2024</div>
-        <div class="cv-content">
-          <h3>Artificial Intelligence models for biomedical and rehabilitation engineering</h3>
-          <div class="institution">Sangmyoung University</div>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Aug. 2024</div>
-        <div class="cv-content">
-          <h3>Generative AI and their applications</h3>
-          <div class="institution">Sunchon National University</div>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Jul. 2024</div>
-        <div class="cv-content">
-          <h3>Deep Neural Network and its applications in the biomedical field</h3>
-          <div class="institution">Chonnam National University</div>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Jun. 2024</div>
-        <div class="cv-content">
-          <h3>Graph neural networks and prototype learning</h3>
-          <div class="institution">Sangmyoung University</div>
-        </div>
-      </div>
-      <div class="cv-item">
-        <div class="cv-period">Nov. 2023</div>
-        <div class="cv-content">
-          <h3>Designing interpretable deep learning model in biomedical engineering</h3>
-          <div class="institution">Sunchon National University</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-label">Skills &amp; Service</div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4>Programming</h4>
-        <ul>
-          <li>Python</li><li>C / C++</li><li>Java</li><li>SQL</li><li>MATLAB</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>ML / DL</h4>
-        <ul>
-          <li>PyTorch</li><li>PyTorch Geometric</li><li>TensorFlow / Keras</li><li>scikit-learn</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Research Areas</h4>
-        <ul>
-          <li>Federated Learning</li><li>Graph Neural Networks</li><li>EMG / Biosignals</li><li>Explainable AI</li><li>Distributed IoT</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Journal Reviews</h4>
-        <ul>
-          <li>IEEE IoT Journal</li><li>IEEE Trans. AI</li><li>J. of Neural Engineering</li><li>Scientific Reports</li><li>+ 15 others</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Languages</h4>
-        <ul>
-          <li>English (Native-level)</li><li>Korean (Native)</li>
-        </ul>
-      </div>
+  <section id="news" style="animation-delay:.2s">
+    <div class="section-label">News</div>
+    <div class="news-list">
+      <div class="news-item"><span class="news-date">Mar. 2026</span><span class="news-text">Paper accepted at <em>Scientific Reports</em> — Few-Shot Prototype Adaptation for Generalizable EMG Gesture Recognition.</span></div>
+      <div class="news-item"><span class="news-date">Jan. 2026</span><span class="news-text">Paper published in <em>IEEE Internet of Things Journal</em> — FedPML (IF: 9.9).</span></div>
+      <div class="news-item"><span class="news-date">May 2025</span><span class="news-text">Started as Research Engineer Intern at <strong>Fasikl Incorporated</strong>, Bloomington, MN.</span></div>
+      <div class="news-item"><span class="news-date">2026</span><span class="news-text">Awarded <strong>Doctoral Dissertation Fellowship</strong> ($26,000) by the University of Minnesota.</span></div>
+      <div class="news-item"><span class="news-date">2025</span><span class="news-text">Received <strong>IOP Outstanding Reviewer Award</strong> for the Journal of Neural Engineering.</span></div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Hunmin (Troy) Lee · University of Minnesota · <a href="mailto:lee03915@umn.edu" style="color:inherit">lee03915@umn.edu</a></p>
+    <p>© 2026 Hunmin (Troy) Lee · University of Minnesota · <a href="mailto:lee03915@umn.edu">lee03915@umn.edu</a></p>
   </footer>
 
 </div>
-
-<script>
-  const sections = document.querySelectorAll('section');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.06 });
-  sections.forEach(s => obs.observe(s));
-
-  const navLinks = document.querySelectorAll('nav a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
-    navLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-  });
-</script>
 </body>
 </html>
